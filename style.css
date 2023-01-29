@@ -1,3 +1,21 @@
-h1, p {
-  font-family: Lato;
+.App {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.buttonTab {
+  background-color: #0475e0;
+  border-radius: 25px;
+  text-align: center;
+  width: 150px;
+}
+.buttonText {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  padding: 6px;
+}
+.buttonText:hover {
+  cursor: pointer;
 }
