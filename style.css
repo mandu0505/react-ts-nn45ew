@@ -4,17 +4,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.headerTab {
+  text-align: center;
+}
 .buttonTab {
   background-color: #0475e0;
   border-radius: 25px;
   text-align: center;
-  width: 150px;
+  margin-top: 30px;
 }
 .buttonText {
   font-size: 20px;
   font-weight: 400;
   color: #fff;
-  padding: 6px;
+  padding: 7px;
 }
 .buttonText:hover {
   cursor: pointer;
