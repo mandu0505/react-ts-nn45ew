@@ -1,3 +1,7 @@
+* {
+  background-color: #000;
+  color: #fff;
+}
 .App {
   position: absolute;
   top: 50%;
@@ -8,7 +12,6 @@
   text-align: center;
 }
 .buttonTab {
-  background-color: #0475e0;
   border-radius: 25px;
   text-align: center;
   margin-top: 30px;
@@ -20,5 +23,17 @@
   padding: 7px;
 }
 .buttonText:hover {
+  cursor: pointer;
+  background-color: #0475e0;
+  border-radius: 25px;
+  transition: background 1s ease-out;
+}
+
+button {
+  background-color: #0475e0;
+  border-radius: 25px;
+  padding: 5px 10px;
+}
+button:hover {
   cursor: pointer;
 }
