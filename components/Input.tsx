@@ -7,10 +7,10 @@ export default function Input() {
   const [price, setPrice] = useRecoilState(priceAtom);
   const [time, setTime] = useRecoilState(timeAtom);
 
-  const onChangeMoney = (e) => {
+  const onChangeMoney = (e: { target: { value: Number } }) => {
     setPrice(Number(e.target.value));
   };
-  const onChangeTime = (e) => {
+  const onChangeTime = (e: { target: { value: Number } }) => {
     setTime(Number(e.target.value));
   };
   const resetMoney = () => {
@@ -19,12 +19,12 @@ export default function Input() {
   const resetTime = () => {
     setTime(0);
   };
-  const changeMoneyButton = (e) => {
+  const changeMoneyButton = (e: { target: { value: Number } }) => {
     price + Number(e.target.value) < 400000
       ? setPrice(price + Number(e.target.value))
       : setPrice(400000);
   };
-  const changeTimeButton = (e) => {
+  const changeTimeButton = (e: { target: { value: Number } }) => {
     time + Number(e.target.value) < 18
       ? setTime(time + Number(e.target.value))
       : setTime(18);
