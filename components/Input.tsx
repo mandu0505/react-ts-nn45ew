@@ -1,30 +1,33 @@
 import * as React from 'react';
 import '../style.css';
+import { useRecoilState } from 'recoil';
+import { priceAtom, timeAtom } from '../atom';
 
 export default function Input() {
-  const [moneyValue, setMoneyValue] = React.useState(0);
-  const [timeValue, setTimeValue] = React.useState(0);
+  const [price, setPrice] = useRecoilState(priceAtom);
+  const [time, setTime] = useRecoilState(timeAtom);
+
   const onChangeMoney = (e) => {
-    setMoneyValue(Number(e.target.value));
+    setPrice(Number(e.target.value));
   };
   const onChangeTime = (e) => {
-    setTimeValue(Number(e.target.value));
+    setTime(Number(e.target.value));
   };
   const resetMoney = () => {
-    setMoneyValue(0);
+    setPrice(0);
   };
   const resetTime = () => {
-    setTimeValue(0);
+    setTime(0);
   };
   const changeMoneyButton = (e) => {
-    moneyValue + Number(e.target.value) < 400000
-      ? setMoneyValue(moneyValue + Number(e.target.value))
-      : setMoneyValue(400000);
+    price + Number(e.target.value) < 400000
+      ? setPrice(price + Number(e.target.value))
+      : setPrice(400000);
   };
   const changeTimeButton = (e) => {
-    timeValue + Number(e.target.value) < 18
-      ? setTimeValue(timeValue + Number(e.target.value))
-      : setTimeValue(18);
+    time + Number(e.target.value) < 18
+      ? setTime(time + Number(e.target.value))
+      : setTime(18);
   };
   return (
     <div className="InputTab">
@@ -34,7 +37,7 @@ export default function Input() {
           <input
             type="range"
             onChange={onChangeMoney}
-            value={moneyValue}
+            value={price}
             min="0"
             max="400000"
           />
@@ -53,7 +56,7 @@ export default function Input() {
           <button onClick={resetMoney}>초기화</button>
         </div>
         <div>
-          <b>{moneyValue} 원</b>
+          <b>{price} 원</b>
         </div>
       </div>
       <div className="InputBox">
@@ -62,7 +65,7 @@ export default function Input() {
           <input
             type="range"
             onChange={onChangeTime}
-            value={timeValue}
+            value={time}
             min="0"
             max="18"
           />
@@ -75,7 +78,7 @@ export default function Input() {
           <button onClick={resetTime}>초기화</button>
         </div>
         <div>
-          <b>{timeValue} 개월</b>
+          <b>{time} 개월</b>
         </div>
       </div>
     </div>
