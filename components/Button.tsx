@@ -25,10 +25,11 @@ export default function Button() {
         계산하기
       </h1>
       <h1>
-        국가지원금66%: {won.format(calculatedPrice)}원 + 은행이자5%:{' '}
-        {won.format(bankPrice)}원 =
+        국가지원금66%
+        {calculatedPrice === 0 ? '' : `: ${won.format(calculatedPrice)}원`} +
+        은행이자5%{bankPrice === 0 ? '' : `: ${won.format(bankPrice)}원`} =
         <div className="finalPrice">
-          총합{finalPrice === 0 ? ': ?' : `: ${won.format(finalPrice)}`}
+          총합{finalPrice === 0 ? '' : `: ${won.format(finalPrice)}원`}
         </div>
       </h1>
     </div>
