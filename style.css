@@ -38,3 +38,7 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.finalPrice {
+  color: aquamarine;
+}

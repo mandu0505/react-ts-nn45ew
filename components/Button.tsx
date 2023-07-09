@@ -15,14 +15,21 @@ export default function Button() {
     setBankPrice(price * 0.05 * time);
     setFinalPrice(price * 0.75 * time + price * 0.05 * time);
   };
+  const won = Intl.NumberFormat('ko-KR', {
+    style: 'currency',
+    currency: 'KRW',
+  });
   return (
     <div className="buttonTab">
       <h1 className="buttonText" onClick={calculatePrice}>
         계산하기
       </h1>
       <h1>
-        국가지원금(66%): {calculatedPrice}원 + 은행이자(5%):{' '}
-        {Math.floor(bankPrice)}원 = 총합: {Math.floor(finalPrice)}원
+        국가지원금66%: {won.format(calculatedPrice)}원 + 은행이자5%:{' '}
+        {won.format(bankPrice)}원 =
+        <div className="finalPrice">
+          총합{finalPrice === 0 ? ': ?' : `: ${won.format(finalPrice)}`}
+        </div>
       </h1>
     </div>
   );
