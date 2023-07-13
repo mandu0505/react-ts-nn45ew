@@ -94,11 +94,18 @@ a:hover i::after {
 
 button {
   background-color: #0475e0;
-  border-radius: 25px;
+  border-radius: 3px;
   padding: 5px 10px;
+  margin: 0 5px;
+  position: relative;
+  background: #444;
+  color: #fff;
+  text-decoration: none;
+  border: none;
 }
 button:hover {
   cursor: pointer;
+  background-color: #111;
 }
 
 .finalPrice {
