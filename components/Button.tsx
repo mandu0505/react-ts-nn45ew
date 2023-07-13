@@ -20,10 +20,13 @@ export default function Button() {
     currency: 'KRW',
   });
   return (
-    <div className="buttonTab">
-      <h1 className="buttonText" onClick={calculatePrice}>
-        계산하기
-      </h1>
+    <div>
+      <div className="aTab">
+        <a href="#" onClick={calculatePrice}>
+          <span>계산하기</span>
+          <i></i>
+        </a>
+      </div>
       <h1>
         국가지원금66%
         {calculatedPrice === 0 ? '' : `: ${won.format(calculatedPrice)}원`} +

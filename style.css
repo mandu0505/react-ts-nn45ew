@@ -1,5 +1,5 @@
 * {
-  background-color: #000;
+  background-color: #27282c;
   color: #fff;
 }
 .App {
@@ -12,22 +12,84 @@
   text-align: center;
   font-size: large;
 }
-.buttonTab {
-  border-radius: 25px;
+.aTab {
+  display: flex;
   text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 30px;
 }
-.buttonText {
-  font-size: 20px;
+a {
+  position: relative;
+  background: #444;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
   font-weight: 400;
-  color: #fff;
-  padding: 7px;
+  padding: 10px 30px;
+  transition: 0.5s;
 }
-.buttonText:hover {
-  cursor: pointer;
-  background-color: #0475e0;
-  border-radius: 25px;
-  transition: background 1s ease-out;
+a:hover {
+  background-color: aqua;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: 0.25em;
+}
+a::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background-color: #27282c;
+}
+a span {
+  position: relative;
+  z-index: 1;
+}
+a i {
+  inset: 0;
+  display: block;
+}
+a i::before {
+  content: '';
+  position: absolute;
+  top: -3.5px;
+  left: 80%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 6px;
+  background-color: #27282c;
+  border: 2px solid #0475e0;
+  transition: 0.5s;
+  box-shadow: 0.5s;
+  transition-delay: 0s, 0.5s;
+}
+a:hover i::before {
+  width: 6px;
+  left: calc(50%);
+  box-shadow: 70px 0 #fff, -70px 0 #0475e0, -70px 0 0 4px #27282c,
+    10px -10px #0475e0, -10px -10px #fff;
+}
+a i::after {
+  content: '';
+  position: absolute;
+  bottom: -3.5px;
+  left: 20%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 6px;
+  background-color: #27282c;
+  border: 2px solid #0475e0;
+  transition: 0.5s;
+  box-shadow: 0.5s;
+  transition-delay: 0s, 0.5s;
+}
+a:hover i::after {
+  width: 6px;
+  left: calc(50%);
+  box-shadow: -70px 0 #fff, 70px 0 #0475e0, 70px 0 0 4px #27282c,
+    -10px 10px #0475e0, 10px 10px #fff;
 }
 
 button {
